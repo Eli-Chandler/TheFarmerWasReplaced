@@ -221,3 +221,8 @@ def try_plant(item=None, priorities=None):
             return True
         quick_print("Failed to plant", priority_item)
     return False
+
+def wait_harvest():
+    while get_entity_type() != None and not can_harvest():
+        pass
+    harvest()
