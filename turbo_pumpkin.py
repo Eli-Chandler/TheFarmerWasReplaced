@@ -14,7 +14,6 @@ def turbo_pumpkin(stop_condition_function=None):
         while len(check_curr) > 0:
             check_next = set()
             while len(check_curr) > 0:
-
                 nearest = find_nearest_position(check_curr)
                 go_to_tuple(nearest)
                 water_if_low()
@@ -29,10 +28,12 @@ def turbo_pumpkin(stop_condition_function=None):
 
         harvest()
 
+
 def _plant_pumpkin():
     quick_print("Planting pumpkin")
     till_if_needed()
     plant(Entities.Pumpkin)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     turbo_pumpkin()

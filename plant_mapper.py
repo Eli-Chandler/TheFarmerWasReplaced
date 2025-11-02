@@ -7,7 +7,7 @@ _EVERYTHING_MAP = [
     (Items.Wood, Entities.Tree),
     (Items.Carrot, Entities.Carrot),
     (Items.Pumpkin, Entities.Pumpkin),
-    (Items.Power, Entities.Sunflower)
+    (Items.Power, Entities.Sunflower),
 ]
 
 

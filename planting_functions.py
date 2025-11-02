@@ -12,6 +12,7 @@ def default_try_harvest():
         return True
     return False
 
+
 # == HAY ==
 
 
@@ -41,9 +42,7 @@ def try_harvest_carrot():
 
 
 def try_plant_wood():
-    if (x_mod(2) == 0 and y_mod(2) == 0) or (
-        x_mod(2) == 1 and y_mod(2) == 1
-    ):
+    if (x_mod(2) == 0 and y_mod(2) == 0) or (x_mod(2) == 1 and y_mod(2) == 1):
         wplant(Entities.Tree)
         return True
     return False
@@ -71,12 +70,12 @@ def try_plant_pumpkin():
     return True
 
 
-
 def try_harvest_pumpkin():
     if _PUMPKINS_ALIVE_COUNT >= 6 * 6 and can_harvest():
         harvest()
         return True
     return False
+
 
 def no_op_harvest():
     return False
@@ -106,6 +105,7 @@ from __builtins__ import measure, harvest
 
 _SUNFLOWER_PETALS = {}
 
+
 def add_sunflower_petals():
     # Only measure if we're actually on a sunflower
     if get_entity_type() != Entities.Sunflower:
@@ -116,6 +116,7 @@ def add_sunflower_petals():
 
     petals = measure()
     _SUNFLOWER_PETALS[get_pos_tuple()] = petals
+
 
 def try_plant_sunflower():
     if get_pos_x() < 6 and get_pos_y() < 6:
@@ -139,11 +140,15 @@ def try_harvest_sunflower():
         return False
     petals = measure()
 
-    if petals < max(get_dictionary_values(_SUNFLOWER_PETALS)) and len(_SUNFLOWER_PETALS) <= 10:
+    if (
+        petals < max(get_dictionary_values(_SUNFLOWER_PETALS))
+        and len(_SUNFLOWER_PETALS) <= 10
+    ):
         return False
     harvest()
     _SUNFLOWER_PETALS.pop(get_pos_tuple())
     return True
+
 
 # Just to catch any unregistered sunflowers
 def sunflower_observe_move():

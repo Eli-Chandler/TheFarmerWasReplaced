@@ -8,6 +8,7 @@ def turbo_polyculture(stop_condition_function=None):
     while stop_condition_function == None or not stop_condition_function():
         companion_type, pos = _polyculture_plant(companion_type, pos)
 
+
 def _polyculture_plant(plant_type, pos_tuple):
     go_to_tuple(pos_tuple)
     while get_entity_type() != None and not can_harvest():
@@ -19,5 +20,6 @@ def _polyculture_plant(plant_type, pos_tuple):
     plant(plant_type)
     return get_companion()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     turbo_polyculture(None)

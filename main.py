@@ -8,10 +8,9 @@ FOCUS = None
 
 
 def do_plant():
-   try_harvest()
-   try_plant()
-   water_if_low()
-
+    try_harvest()
+    try_plant()
+    water_if_low()
 
 
 def main():
