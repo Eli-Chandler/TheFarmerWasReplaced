@@ -30,7 +30,8 @@ def turbo_pumpkin(stop_condition_function=None):
 
 
 def _plant_pumpkin():
-    quick_print("Planting pumpkin")
+    if get_entity_type() != Entities.Pumpkin:
+        harvest()
     till_if_needed()
     plant(Entities.Pumpkin)
 
